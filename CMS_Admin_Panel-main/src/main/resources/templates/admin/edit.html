@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="${language}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments::head"></head>
+    <body class="bg-white">
+        <th:block th:replace="fragments::languages"/>
+        <div class="header container-fluid mb-2">
+            [(${header})]
+        </div>
+        <div class="container-fluid my-3">
+            <div class="container container-form mt-5">
+                <form action="#" th:action="${langPrefix} + '/admin/pages/' + ${page.code}" th:object="${page}" th:method="put"
+                      class="form form-extended d-flex flex-column align-items-center p-4 shadow" id="edit"
+                >
+                    <h2 th:text="#{update.label}" class="mb-4"></h2>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.titleEn})"/>
+                            <input type="text"
+                                   th:field="*{titleEn}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.titleUa})"/>
+                            <input type="text"
+                                   th:field="*{titleUa}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.code})"/>
+                            <input type="text"
+                                   th:field="*{code}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.contentEn})"/>
+                            <input type="text"
+                                   th:field="*{contentEn}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.contentUa})"/>
+                            <input type="text"
+                                   th:field="*{contentUa}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.imageUrl})"/>
+                            <input type="text"
+                                   th:field="*{imageUrl}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.descriptionEn})"/>
+                            <input type="text"
+                                   th:field="*{descriptionEn}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.descriptionUa})"/>
+                            <input type="text"
+                                   th:field="*{descriptionUa}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.order})"/>
+                            <input type="number"
+                                   th:field="*{orderNum}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.sortType})"/>
+                            <input type="text"
+                                   th:field="*{orderType}"
+                                   class="input form-control shadow-sm"
+                                   required
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{create.aliasPage})"/>
+                            <input type="text"
+                                   th:field="*{aliasPage.code}"
+                                   class="input form-control shadow-sm"
+                            />
+                        </div>
+                    </div>
+                    <div class="form__element mb-3">
+                        <div class="input-group">
+                            <th:block th:replace="fragments::input-label(text=#{update.parentCode})"/>
+                            <input type="text"
+                                   th:field="*{parentPage.code}"
+                                   class="input form-control shadow-sm"
+                            />
+                        </div>
+                    </div>
+                    <button th:text="#{update.submit}" type="submit"
+                            class="btn btn-success mb-4 mt-3"></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer container-fluid mt-2">
+            [(${footer})]
+        </div>
+    </body>
+</html>
